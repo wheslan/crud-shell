@@ -15,16 +15,31 @@ main(){
 		2) listar;;
 		3) buscar;;
 		4) remover;;
-		
 
   	esac	
 	done
 }
 
 adicionar(){
- 	#echo Adicionar Instrumento
-	#read instrumento
-	#$instrumento >> $arquivo
+ 	echo "adicionar instrumento"
+	read instrumento
+	echo $instrumento >> $arquivo
+}
+listar(){
+	echo "listar instrumentos"
+	cat /home/aluno/Documentos/arquivo-crud.txt
+
+}
+buscar(){
+	echo "Digite o nome do instrumento para buscar" 
+	read instrumento
+	grep $instrumento /home/aluno/Documentos/arquivo-crud.txt
+
+}
+remover(){
+	echo "digite o nome do instrumento para remover"
+	
+	
 }
 
 main #chamada do método
