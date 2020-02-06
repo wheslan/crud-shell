@@ -1,23 +1,23 @@
 #!/bin/bash
 
-arquivo="/home/aluno/Documentos/arquivo-crud.txt"
+arquivo="/home/aluno/Documentos/arquivo-crud.txt" # guarda arquivo de texto
 
 main(){
-	while :; do
+	while :; do  # loop infinito 
 	echo "1- adicionar instrumento: "
 	echo "2- listar:    "
 	echo "3- buscar:    "
 	echo "4- remover:    "
 
-	read entrada
-	case $entrada in
+	read entrada  # escolha um numero para chamar determinado método
+	case $entrada in # menu switch case 
 		1) adicionar;;
 		2) listar;;
 		3) buscar;;
 		4) remover;;
 
-  	esac	
-	done
+  	esac	#fechamento do switch
+	done    #fechamento do while
 }
 
 adicionar(){
@@ -46,7 +46,7 @@ buscar(){
 
 }
 remover(){
-	echo "digite o nome do instrumento para remover"
+	echo "digite o nome do instrumento para remover" 
 	read instrumento
 	cat $arquivo | grep -v $instrumento >> $arquivo
 	
