@@ -4,7 +4,7 @@ arquivo="/home/aluno/Documentos/arquivo-crud.txt"
 
 main(){
 	while :; do
-	echo "1- adicionar: "
+	echo "1- adicionar instrumento: "
 	echo "2- listar:    "
 	echo "3- buscar:    "
 	echo "4- remover:    "
@@ -21,9 +21,18 @@ main(){
 }
 
 adicionar(){
- 	echo "adicionar instrumento"
+	echo "adicione instrumento"
 	read instrumento
-	echo $instrumento >> $arquivo
+ 	echo "adicione uma cor"
+	read cor
+	echo "adicione marca"
+	read marca
+	echo "adicione tamanho"
+	read tamanho
+	echo "" >> $arquivo
+	echo "Instrumento: $instrumento | Cor: $cor | marca: $marca | tamanho(cm): $tamanho" >> $arquivo
+	echo "" >> $arquivo
+	
 }
 listar(){
 	echo "listar instrumentos"
@@ -38,7 +47,8 @@ buscar(){
 }
 remover(){
 	echo "digite o nome do instrumento para remover"
-	
+	read instrumento
+	cat $arquivo | grep -v $instrumento >> $arquivo
 	
 }
 
