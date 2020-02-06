@@ -1,23 +1,34 @@
 #!/bin/bash
 
-while :; do
-	echo "1- Adicionar: "
-	echo "2- listar: "
+arquivo="/home/aluno/Documentos/arquivo-crud.txt"
 
-	read numero
-	if test [ $numero -eq 0 ];
-	then
-	    // redirecionar saída para o arquivo de texto
-	elif [ $numero -lt 0 ]
-	then
-	    echo "Número negativo"
-	elif [ $numero -eq 0 ]
-	then
-	    echo "Número é zero"
-	else
-	    echo "O valor fornecido não é um número!"
-	fi	
-done
+main(){
+	while :; do
+	echo "1- adicionar: "
+	echo "2- listar:    "
+	echo "3- buscar:    "
+	echo "4- remover:    "
+
+	read entrada
+	case $entrada in
+		1) adicionar;;
+		2) listar;;
+		3) buscar;;
+		4) remover;;
+		
+
+  	esac	
+	done
+}
+
+adicionar(){
+ 	#echo Adicionar Instrumento
+	#read instrumento
+	#$instrumento >> $arquivo
+}
+
+main #chamada do método
+
 
 
 
