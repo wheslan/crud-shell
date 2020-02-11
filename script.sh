@@ -48,7 +48,7 @@ buscar(){
 remover(){
 	echo "digite o nome do instrumento para remover" 
 	read instrumento
-	cat $arquivo | grep -v $instrumento >> $arquivo
+	sed -i /$instrumento/d $arquivo
 	
 }
 
